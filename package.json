@@ -1,0 +1,42 @@
+{
+  "name": "campaign-panel",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-preset-env": "^1.6.1",
+    "bootstrap": "^4.0.0-beta.2",
+    "cors": "^2.8.4",
+    "date-fns": "^1.29.0",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "reactstrap": "^5.0.0-alpha.4",
+    "recharts": "^1.0.0-beta.6",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "store": "^2.0.12"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.12.5",
+    "react-scripts": "1.0.17",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "data": "rimraf \"server/data.json\" && babel-node server/fakeDataGenerator.js",
+    "server": "nodemon server/server.js --exec babel-node",
+    "start": "concurrently \"npm run client\" \"npm run server\""
+  }
+}
