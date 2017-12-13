@@ -30,14 +30,16 @@ class CampaignsList extends Component {
               campaigns.map(campaign => {
                 return (
                   <tr key={`${campaign.id}`}>
-                    <td
-                      className={`badge ${
-                        campaign.status === 'Active'
-                          ? 'badge-primary'
-                          : 'badge-secondary'
-                      }`}
-                    >
-                      {campaign.status}
+                    <td>
+                      <span
+                        className={`badge ${
+                          campaign.status === 'Active'
+                            ? 'badge-primary'
+                            : 'badge-secondary'
+                        }`}
+                      >
+                        {campaign.status}
+                      </span>
                     </td>
                     <td>{campaign.name}</td>
                     <td>$ {campaign.daily_budget}</td>

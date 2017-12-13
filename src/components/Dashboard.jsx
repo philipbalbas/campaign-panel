@@ -6,7 +6,6 @@ import CampaignsPage from './CampaignsPage'
 import StatsPage from './StatsPage'
 
 class Dashboard extends Component {
-
   render() {
     return (
       <div>
@@ -20,4 +19,4 @@ class Dashboard extends Component {
   }
 }
 
-export default (Dashboard)
+export default Dashboard

@@ -11,10 +11,12 @@ function randomStatus() {
 }
 
 function statsMaker() {
-  const dates = dateFns.eachDay(faker.date.past(), faker.date.recent()).slice(0, 10)
+  const dates = dateFns
+    .eachDay(faker.date.past(), faker.date.recent())
+    .slice(0, 10)
   return dates.map(date => {
     return {
-      date: dateFns.format(date, 'YYYY-MM-DD' ),
+      date: dateFns.format(date, 'YYYY-MM-DD'),
       impressions: Math.floor(Math.random() * 101000) + 1000,
       clicks: Math.floor(Math.random() * 1000) + 50
     }
@@ -46,14 +48,14 @@ function campaignGenerator(num) {
       id,
       status: randomStatus(),
       name: `${faker.commerce.productAdjective()} ${faker.commerce.productName()} Campaign`,
-      total_budget: daily_budget * multiplier,
-      daily_budget,
+      total_budget: (daily_budget * multiplier).toFixed(2),
+      daily_budget
     })
     id += 1
   }
   return campaigns
 }
 
-data = { campaigns: campaignGenerator(10), stats: statsGenerator(10)}
+data = { campaigns: campaignGenerator(10), stats: statsGenerator(10) }
 
 fs.appendFileSync(path.resolve(__dirname, `data.json`), JSON.stringify(data))

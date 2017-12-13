@@ -31,7 +31,7 @@ class DropdownGroup extends Component {
     this.props.inactivateCampaign(this.props.campaign.id)
   }
 
-  handleStatsClick = (id) => {
+  handleStatsClick = id => {
     this.context.router.history.push(`/campaigns/${id}/stats`)
   }
 
@@ -54,7 +54,9 @@ class DropdownGroup extends Component {
                 Activate
               </DropdownItem>
             )}
-              <DropdownItem onClick={() => this.handleStatsClick(campaign.id)} >Stats</DropdownItem>
+            <DropdownItem onClick={() => this.handleStatsClick(campaign.id)}>
+              Stats
+            </DropdownItem>
           </DropdownMenu>
         </ButtonDropdown>
       </td>
