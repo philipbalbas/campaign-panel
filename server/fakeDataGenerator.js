@@ -54,6 +54,6 @@ function campaignGenerator(num) {
   return campaigns
 }
 
-data = { campaigns: campaignGenerator(5), stats: statsGenerator(5)}
+data = { campaigns: campaignGenerator(10), stats: statsGenerator(10)}
 
 fs.appendFileSync(path.resolve(__dirname, `data.json`), JSON.stringify(data))
